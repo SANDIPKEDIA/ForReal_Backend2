@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "braintree/braintree_php": "^3.40",
         "firebase/php-jwt": "^7.0",
         "intervention/image": "^2.7",
