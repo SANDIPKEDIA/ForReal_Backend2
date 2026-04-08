@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost:8000'),
+    'url' => env('APP_URL') ?: (env('RAILWAY_PUBLIC_DOMAIN') ? 'https://'.env('RAILWAY_PUBLIC_DOMAIN') : 'http://localhost:8000'),
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +117,9 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env( 'APP_KEY' ) ?: ( getenv( 'RAILWAY_ENVIRONMENT' ) !== false
+        ? 'base64:'.base64_encode( hash( 'sha256', 'ForReal_Backend-railway-insecure-fallback', true ) )
+        : '' ),
 
     'cipher' => 'AES-256-CBC',
 

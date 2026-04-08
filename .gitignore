@@ -1,4 +1,5 @@
 /node_modules
+/database/mysql_local_data/
 /public/storage
 /public/hot
 /storage/*.key

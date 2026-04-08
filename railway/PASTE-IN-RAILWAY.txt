@@ -1,0 +1,12 @@
+Paste these on your Laravel/web service → Variables (use "Add variable reference" for the first line).
+
+1) DATABASE_URL  =  ${{MySQL.MYSQL_URL}}
+   (Change "MySQL" to match your MySQL service name if different.)
+
+2) Optional (defaults work on Railway if you skip them):
+   APP_DEBUG=true
+   LOG_CHANNEL=stderr
+
+3) Generate a public domain: Service → Settings → Networking → Generate Domain.
+
+That is enough: APP_URL and APP_KEY are filled automatically on Railway for this repo.

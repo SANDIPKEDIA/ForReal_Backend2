@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\AuditableObserver;
 use App\User;
@@ -20,6 +21,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $railwayDomain = env( 'RAILWAY_PUBLIC_DOMAIN' );
+        if ( ! env( 'APP_URL' ) && $railwayDomain ) {
+            URL::forceRootUrl( 'https://'.$railwayDomain );
+        }
+        if ( getenv( 'RAILWAY_ENVIRONMENT' ) !== false ) {
+            URL::forceScheme( 'https' );
+        }
+
         $observer = AuditableObserver::class;
 
         User::observe($observer);

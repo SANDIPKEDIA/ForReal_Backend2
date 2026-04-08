@@ -1,5 +1,14 @@
 {
+  "$schema": "https://railway.com/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "RAILPACK",
+    "buildCommand": "composer install --no-dev --optimize-autoloader --no-interaction && npm ci --legacy-peer-deps && npm run production"
+  },
+  "deploy": {
+    "preDeployCommand": ["chmod +x railway/init-app.sh && ./railway/init-app.sh"],
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 300,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3
   }
 }

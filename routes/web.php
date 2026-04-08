@@ -13,6 +13,10 @@
 
 #include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'api.php');
 
+Route::get('health', function () {
+	return response('ok', 200)->header('Content-Type', 'text/plain');
+});
+
 Route::get('payment', function () {
     $curl = curl_init();
 

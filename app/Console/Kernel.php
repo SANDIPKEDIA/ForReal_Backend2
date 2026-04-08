@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         '\App\Console\Commands\Reminder',
         '\App\Console\Commands\RefundCustomers',
         '\App\Console\Commands\GetExchangeRates',
+        '\App\Console\Commands\BootstrapLocalDatabase',
     ];
 
     /**

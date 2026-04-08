@@ -17,6 +17,7 @@
     "lodash": "^4.17.21",
     "postcss": "^8.4.31",
     "sass": "^1.69.0",
+    "sass-loader": "^12.6.0",
     "vue": "^3.3.0",
     "vue-loader": "^17.3.0",
     "vue-template-compiler": "^2.7.16"
